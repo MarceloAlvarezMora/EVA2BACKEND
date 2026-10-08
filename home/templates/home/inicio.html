@@ -1,11 +1,76 @@
 {% extends 'home/base.html' %}
 
-{% block title %}Inicio{% endblock %}
+{% block title %}Inicio - Películas{% endblock %}
 
 {% block content %}
 
-    <h1>Bienvenido a nuestra página de películas</h1>
+<!-- HERO -->
+<section class="py-5 text-center container">
+    <div class="row py-lg-5">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h1 class="fw-light">Películas</h1>
 
-    <p>Explora nuestros géneros cinematográficos.</p>
+            <p class="lead text-body-secondary">
+                Explora nuestros géneros cinematográficos y descubre
+                películas para todos los gustos.
+            </p>
+        </div>
+    </div>
+</section>
+
+
+<!-- GÉNEROS -->
+<div class="album py-5 bg-body-tertiary">
+
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 g-4">
+
+            <!-- GÉNERO 1 -->
+            <div class="col">
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+                        <h2 class="card-title">Acción</h2>
+
+                        <p class="card-text">
+                            Descubre películas de acción llenas de
+                            aventura, combates y emoción.
+                        </p>
+
+                        <a href="{% url 'home:accion' %}" class="btn btn-primary">
+                            Ver películas
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- GÉNERO 2 -->
+            <div class="col">
+                <div class="card shadow-sm">
+
+                    <div class="card-body">
+                        <h2 class="card-title">Terror</h2>
+
+                        <p class="card-text">
+                            Explora películas de terror y sumérgete
+                            en historias inquietantes y perturbadoras.
+                        </p>
+
+                        <a href="#" class="btn btn-primary">
+                            Ver películas
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}
