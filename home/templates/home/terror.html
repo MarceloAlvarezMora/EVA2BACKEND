@@ -1,0 +1,57 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}Películas de Terror{% endblock %}
+
+{% block content %}
+
+<section class="py-5 text-center container">
+    <div class="row py-lg-4">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <h1 class="fw-light">Películas de Terror</h1>
+
+            <p class="lead text-body-secondary">
+                Explora nuestra selección de películas de terror.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="album py-5 bg-body-tertiary">
+    <div class="container">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+
+            {% for pelicula in peliculas %}
+
+            <div class="col">
+                <div class="card shadow-sm h-100">
+
+                    {% if pelicula.imagen %}
+                    <img src="{% static pelicula.imagen %}"
+                         class="card-img-top"
+     alt="{{ pelicula.nombre }}"
+     style="height: 350px; object-fit: cover;">
+                    {% endif %}
+
+                    <div class="card-body">
+                        <h2 class="card-title h5">
+                            {{ pelicula.nombre }}
+                        </h2>
+
+                        <p class="card-text">
+                            Año: {{ pelicula.anio }}
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
